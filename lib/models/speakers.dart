@@ -5,4 +5,17 @@ class Speaker {
   String intro;
 
   Speaker({this.firstName, this.lastName, this.competence, this.intro});
+
+  Speaker.fromJson(Map<String, dynamic> json)
+      : firstName = json['firstName'],
+        lastName = json['lastName'],
+        competence = json['competence'],
+        intro = json['intro'];
+
+  Map<String, dynamic> toJson() => {
+        'firstName': firstName,
+        'lastName': lastName,
+        'competence': competence,
+        'intro': intro,
+      };
 }
